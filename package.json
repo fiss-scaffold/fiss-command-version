@@ -1,0 +1,31 @@
+{
+  "name": "fiss-command-version",
+  "version": "0.0.0",
+  "description": "FISS组件更新版本号命令",
+  "main": "version.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fiss-scaffold/fiss-command-version.git"
+  },
+  "keywords": [
+    "FISS",
+    "组件",
+    "版本号"
+  ],
+  "author": "icefox0801@hotmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fiss-scaffold/fiss-command-version/issues"
+  },
+  "homepage": "https://github.com/fiss-scaffold/fiss-command-version#readme",
+  "dependencies": {
+    "bluebird": "^3.3.5",
+    "jsonfile": "^2.3.0",
+    "log4js": "^0.6.35",
+    "nodegit": "^0.12.2",
+    "semver": "^5.1.0"
+  }
+}
