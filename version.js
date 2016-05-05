@@ -15,9 +15,23 @@ var Promise = require('bluebird');
 var path = require('path');
 var fs = require('fs');
 var jsonfile = require('jsonfile');
-var Log4js = require('log4js');
+var log4js = require('log4js');
 
-var logger = new Log4js.getLogger('fiss');
+log4js.configure({
+  appenders: [
+    {
+      type: 'console',
+      layout: {
+        type: 'pattern',
+        pattern: '%r %[%-5p%] %m'
+      }
+    }
+  ]
+});
+
+var logger = new log4js.getLogger('fiss');
+
+
 
 exports.register = function (commander) {
   commander.action(function () {
@@ -62,7 +76,7 @@ exports.register = function (commander) {
           } else { // 如果发布过版本，直接在此基础上累加
 
             if(!type) return new Promise(function (resolve, reject) {
-              logger.info('Current version: ' + version);
+              logger.info('Current version: ' + json.name + '@' + version);
             });
             // 如果component.json和tag中的版本不匹配
             if(version !== tags.pop()) throw new Error('Component version and the latest tag does not match!');
