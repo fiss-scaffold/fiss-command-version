@@ -12,6 +12,6 @@ fiss version
 fiss version [releaseType]
 ```
 `releaseType`:
-+ major: 更新major版本号(比如`1.0.0`->`2.0.0`)
-+ minor: 更新minor版本号(比如`1.0.0`->`1.1.0`)
-+ patch: 更新patch版本号(比如`1.0.0`->`1.0.1`)
++ `major`: 更新major版本号(比如`1.0.0`->`2.0.0`)
++ `minor`: 更新minor版本号(比如`1.0.0`->`1.1.0`)
++ `patch`: 更新patch版本号(比如`1.0.0`->`1.0.1`)
