@@ -80,6 +80,12 @@ exports.register = function (commander) {
 
       } else { // 如果发布过版本，直接在此基础上累加
 
+        debugger;
+
+        tags = tags.sort(function (a, b) {
+          return semver.compare(a, b);
+        });
+
         if(!type) return new Promise(function (resolve, reject) {
           logger.info('Current version: ' + json.name + '@' + version);
         });
@@ -110,7 +116,9 @@ exports.register = function (commander) {
     .then(function(oid) {
       logger.info("New Commit: " + oid.toString());
       return repo.createTag(oid, nextVersion, 'v' + nextVersion);
-    }).then(function (tag) {
+    })
+    .then(function (tag) {
+      debugger;
       logger.info("New version: " + nextVersion);
     })
     .catch(function (e) {
