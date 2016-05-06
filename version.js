@@ -33,19 +33,16 @@ var logger = new log4js.getLogger('fiss');
 
 exports.register = function (commander) {
   commander
-  .option('-p, --push', 'use git push --follow-tags')
   .action(function () {
-    debugger;
     var args = [].slice.call(arguments);
     var options = args.pop();
     var type = ('string' === typeof args[0] ? args[0] : '');
-    var push = !!options.push;
     var rootDir = process.cwd(); // 项目根目录
     var componentJson;
     var json;
     var repo;
     var version, nextVersion;
-
+    debugger;
     Promise.try(function () {
       // type参数必须是major, minor或者patch
       if(type && !~['major', 'minor', 'patch'].indexOf(type)) throw new Error('Invalid realease type! Expected "major", "minor" or "patch".');
@@ -79,8 +76,6 @@ exports.register = function (commander) {
         }
 
       } else { // 如果发布过版本，直接在此基础上累加
-
-        debugger;
 
         tags = tags.sort(function (a, b) {
           return semver.compare(a, b);
@@ -118,8 +113,7 @@ exports.register = function (commander) {
       return repo.createTag(oid, nextVersion, 'v' + nextVersion);
     })
     .then(function (tag) {
-      debugger;
-      logger.info("New version: " + nextVersion);
+      logger.info("New Version: " + nextVersion);
     })
     .catch(function (e) {
       logger.error(e.message);
