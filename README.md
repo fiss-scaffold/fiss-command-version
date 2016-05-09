@@ -3,8 +3,13 @@
 ## 用法
 
 ### 显示当前组件版本:
++ 显示所有安装组件的版本号:
 ```bash
 fiss version
+```
++ 显示指定组件的版本号:
+```bash
+fiss version list [component]
 ```
 
 ### 更新组件版本号:
