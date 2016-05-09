@@ -1,6 +1,6 @@
 {
   "name": "fiss-command-version",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "description": "FISS组件更新版本号命令",
   "main": "version.js",
   "scripts": {
